@@ -1,6 +1,8 @@
 # app-first
 
-This is a sample template for app-first - Below is a brief explanation of what we have generated for you:
+Este é o modelo que uso para minhas outras aplicações, ele me serve como template
+para acionar lambdas e entregas, desde a **feature**, **develop** e **produção**.
+
 
 ```bash
 .
