@@ -1,0 +1,157 @@
+# General
+.DS_Store
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.lock
+*.csv
+Thumbs.db
+
+# IntelliJ IDEA
+/.idea/
+/*.iml
+/out/
+/target/
+/.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/modules.xml
+.idea/shelf/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.jmod
+/.gradle
+/build/
+/target/
+
+# Maven
+/.mvn/
+/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Spring
+/target/
+/build/
+/.springBeans
+/.springBeans
+/.sts4-cache
+
+# Gradle
+.gradle/
+/build/
+/gradle-app.setting
+!gradle-wrapper.jar
+gradle-wrapper.properties
+build/
+
+# Micronaut
+/build/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
+# Kotlin
+*.class
+*.kt
+*.kts
+*.out
+/.gradle/
+/build/
+
+# Golang
+/bin
+/pkg
+/vendor/
+/coverage.out
+**/go.sum
+*.test
+*.out
+
+# C++
+*.obj
+*.o
+*.lo
+*.la
+*.al
+*.libs
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# C
+*.out
+*.o
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.a
+*.lib
+
+# AWS
+/.terraform/
+/.terragrunt-cache/
+/*.tfstate
+*.tfstate.*
+/*.tfplan
+/.aws-sam/
+/aws-lambda/
+*.stacktrace
+
+# IDEs and tools
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.suo
+*.user
+*.userossc
+*.prune
+*.metadata
+.classpath
+.project
+.settings/
+*.launch
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Miscellaneous
+*.log
+*.temp
+*.tmp
+*.bak
+*.swp
+*.lock
+
