@@ -67,6 +67,15 @@ REPO="renatofagalde/$repo_name"  # Define o repositório no formato correto
 echo "$GITHUB_AWS_ACCESS_KEY_ID" | gh secret set AWS_ACCESS_KEY_ID --repo "$REPO"  # Definindo o segredo AWS_ACCESS_KEY_ID
 echo "$GITHUB_AWS_SECRET_ACCESS_KEY" | gh secret set AWS_SECRET_ACCESS_KEY --repo "$REPO"  # Definindo o segredo AWS_SECRET_ACCESS_KEY
 
-# L16: Informar o sucesso
-echo "#L16: Informando o sucesso..."
+# L16: Adicionar todos os arquivos da nova pasta (incluindo go.sum) ao Git
+echo "#L16: Adicionando todos os arquivos da nova pasta ao Git..."
+cd "$repo_name/$repo_name" || exit
+git add .  # Adiciona todos os arquivos, incluindo go.sum
+
+# L17: Commitar as alterações
+echo "#L17: Commitando as alterações..."
+git commit -m "Adicionando código e arquivos necessários."
+
+# L18: Informar o sucesso
+echo "#L18: Informando o sucesso..."
 echo "Repository '$repo_name' and stack '$stack_name' created successfully with AWS secrets configured!"
