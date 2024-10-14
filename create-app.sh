@@ -46,9 +46,14 @@ sed -i "s/stack_name = .*/stack_name = \"${stack_name}\"/g" samconfig.toml
 # L9: Substituir o nome da Lambda e da LambdaExecutionRole no arquivo template.yaml
 echo "#L9: Substituindo o nome da Lambda e da LambdaExecutionRole no arquivo template.yaml..."
 lowercase_repo_name=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]')  # Converte o nome do repositório para letras minúsculas
+#sed -i "s/HelloWorld/${lowercase_repo_name}/g" template.yaml
+#sed -i "s/HelloWorldFunction/${lowercase_repo_name}Function/g" template.yaml
+#sed -i "s/LambdaExecutionRole/${lowercase_repo_name}LambdaExecutionRole/g" template.yaml
 sed -i "s/HelloWorld/${lowercase_repo_name}/g" template.yaml
 sed -i "s/HelloWorldFunction/${lowercase_repo_name}Function/g" template.yaml
-sed -i "s/LambdaExecutionRole/${stack_name}-LambdaExecutionRole/g" template.yaml
+sed -i "s/LambdaExecutionRole/${lowercase_repo_name}LambdaExecutionRole/g" template.yaml  # Nome alfanumérico para LambdaExecutionRole
+sed -i "s|CodeUri: hello-world/|CodeUri: ${repo_name}/|g" template.yaml  # Ajustando o CodeUri
+
 
 # L10: Definir o nome do módulo como 'bootstrap' no go.mod
 echo "#L10: Definindo o nome do módulo como 'bootstrap' no go.mod..."
