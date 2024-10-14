@@ -66,6 +66,7 @@ echo "#L12: Substituindo ocorrências de texto recursivamente..."
 find . -type f -exec sed -i "s/HelloWorld/${lowercase_repo_name}/g" {} +
 find . -type f -exec sed -i "s/LambdaExecutionRole/${stack_name}-LambdaExecutionRole/g" {} +
 find . -type f -exec sed -i "s/HelloWorldFunction/${lowercase_repo_name}Function/g" {} +
+sed -i "s|CodeUri: hello-world/|CodeUri: ${repo_name}/|g" template.yaml
 
 # L13: Inicializar novo repositório Git e adicionar o remoto correto
 echo "#L13: Inicializando novo repositório Git e adicionando o remoto correto..."
