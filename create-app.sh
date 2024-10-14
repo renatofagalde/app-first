@@ -87,13 +87,13 @@ git commit -m "Adicionando código e arquivos necessários."
 
 
 git branch -M main
-git remote add origin "https://github.com/renatofagalde/$repo_name.git"
+git remote add github "https://github.com/renatofagalde/$repo_name.git"
 
 gh repo create "$repo_name" --private --confirm
 
 # L17: Push inicial para o novo repositório
 echo "#L17: Realizando o push inicial para o novo repositório..."
-git push -u origin main
+git push -u github main
 
 
 # L14: Criar os segredos no novo repositório
