@@ -45,7 +45,7 @@ sed -i "s/stack_name = .*/stack_name = \"${stack_name}\"/g" samconfig.toml
 
 # L9: Substituir o nome da Lambda e da LambdaExecutionRole no arquivo template.yaml
 echo "#L9: Substituindo o nome da Lambda e da LambdaExecutionRole no arquivo template.yaml..."
-lowercase_repo_name=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]')  # Converte o nome do repositório para letras minúsculas
+lowercase_repo_name=$(echo "$repo_name" | tr '[:upper:]' '[:lower:] | tr -cd '[:alnum:])  # Converte o nome do repositório para letras minúsculas
 #sed -i "s/HelloWorld/${lowercase_repo_name}/g" template.yaml
 #sed -i "s/HelloWorldFunction/${lowercase_repo_name}Function/g" template.yaml
 #sed -i "s/LambdaExecutionRole/${lowercase_repo_name}LambdaExecutionRole/g" template.yaml
@@ -69,7 +69,7 @@ cd .. || exit
 # L12: Substituir ocorrências de texto recursivamente em arquivos restantes
 echo "#L12: Substituindo ocorrências de texto recursivamente..."
 find . -type f -exec sed -i "s/HelloWorld/${lowercase_repo_name}/g" {} +
-find . -type f -exec sed -i "s/LambdaExecutionRole/${stack_name}-LambdaExecutionRole/g" {} +
+find . -type f -exec sed -i "s/LambdaExecutionRole/${lowercase_repo_name}-LambdaExecutionRole/g" {} +
 find . -type f -exec sed -i "s/HelloWorldFunction/${lowercase_repo_name}Function/g" {} +
 sed -i "s|CodeUri: hello-world/|CodeUri: ${repo_name}/|g" template.yaml
 
