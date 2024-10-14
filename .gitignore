@@ -85,7 +85,6 @@ build/
 /pkg
 /vendor/
 /coverage.out
-**/go.sum
 *.test
 *.out
 
